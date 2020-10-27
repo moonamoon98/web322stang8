@@ -1,0 +1,20 @@
+{
+  "name": "secondassignment",
+  "version": "1.4.1",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "author": "Spencer Tang",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "nodemailer": "^6.4.14",
+    "nodemon": "^2.0.6"
+  },
+  "devDependencies": {},
+  "description": ""
+}
