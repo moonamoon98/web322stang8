@@ -53,16 +53,16 @@
         }
       }
       if (email.value == "") {
-        document.getElementById("username").innerHTML = "Please Enter a valid e-mail address."
+        document.getElementById("email").innerHTML = "Please Enter a valid e-mail address."
         email.focus();
         error = false;
       } else {
         if (!/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(email.value)) {
-          document.getElementById("username").innerHTML = "Invalid email format"
+          document.getElementById("email").innerHTML = "Invalid email format"
           email.focus();
           error = false;
         } else {
-          document.getElementById("username").innerHTML = ""
+          document.getElementById("email").innerHTML = ""
         }
       }
 
