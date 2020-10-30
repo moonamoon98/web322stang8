@@ -104,7 +104,7 @@ app.post('/registerCheck', async (req, res) => {
   if (Object.keys(error).length > 0) {
 
 
-    res.render('registration.ejs', { error })
+    res.render('registration.html', { error })
   } else {
     sendMail(req.body.email, confirm())
     fs.readFile('./views/dashboard.html', function (err, data) {
