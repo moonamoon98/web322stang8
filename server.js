@@ -6,7 +6,7 @@ const { confirm } = require('./template');
 var fs = require('fs');
 
 
-app.set('view engine', 'ejs')
+app.set('view engine', 'html')
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(express.static(__dirname + '/public'));
 
@@ -68,7 +68,7 @@ app.post('/loginCheck', (req, res) => {
   }
 
   if (Object.keys(error).length > 0) {
-    res.render('login.ejs', { error })
+    res.render('login.html', { error })
   } else {
     if (req.body.email === "test@gmail.com" && req.body.password === "123") {
       fs.readFile('./views/dashboard.html', function (err, data) {
@@ -102,8 +102,6 @@ app.post('/registerCheck', async (req, res) => {
   }
 
   if (Object.keys(error).length > 0) {
-
-
     res.render('registration.html', { error })
   } else {
     sendMail(req.body.email, confirm())
