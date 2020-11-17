@@ -1,4 +1,4 @@
-const nodemailer = require('nodemailer')
+const nodemailer = require('nodemailer');
 var MAIL_USER = "moonamoon9898@gmail.com"
 var PASSWORD = "zudbawu98"
 
@@ -14,12 +14,21 @@ const credentials = {
   }
 }
 
-const transporter = nodemailer.createTransport(credentials)
+let transporter = nodemailer.createTransport(credentials)
 module.exports = async (to, content) => {
   const contacts = {
     from: MAIL_USER,
-    to
+    subject: 'web322 test'
   }
   const email = Object.assign({}, content, contacts)
-  transporter.sendMail(email)
+  transporter.sendMail(email,function(err,data)
+  {
+    if(err){
+    console.log('Error Occurs');}
+    else
+    {
+        console.log('Email sent!!!!');
+    }
+
+  })
 }
